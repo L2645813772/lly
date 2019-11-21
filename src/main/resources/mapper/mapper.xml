@@ -9,15 +9,17 @@
 	</resultMap>
 
 
-    <select id="Sel" resultType="com.example.demo.entity.User">
+    <select id="selectAllUsers" resultType="com.example.demo.entity.User">
 
-     SELECT * FROM user WHERE id = #{id}
+     SELECT * FROM user 
 
 	</select>
 	
-	<select id="login" resultType="com.example.demo.entity.User">
+	<select id="login" resultType="User">
 
-     SELECT * FROM user where userName = #{param1} and password = #{param2}
+        SELECT * FROM user where userName = #{param1} and passWord = #{param2}
 
     </select>
+	
+	
 	</mapper>

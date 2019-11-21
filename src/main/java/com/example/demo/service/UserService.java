@@ -2,6 +2,8 @@ package com.example.demo.service;
 
 
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -12,11 +14,14 @@ import com.example.demo.mapper.UserMapper;
 public class UserService {
 	@Autowired
 	UserMapper userMapper;
-	public User Sel(int id) {
-		return userMapper.Sel(id);
+	public List<User> getAllUser(){
+		
+		return userMapper.selectAllUsers();
+		
 	}
-	public User login(String username, String password) {
-		return userMapper.login(username,password);
+	public User login(String username,String password) {
+		return userMapper.login(username, password);
+		
 	}
 	
 

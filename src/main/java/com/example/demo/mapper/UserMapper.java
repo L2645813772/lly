@@ -1,19 +1,31 @@
 package com.example.demo.mapper;
 
-import org.apache.ibatis.annotations.Param;
-import org.springframework.stereotype.Repository;
+
+import java.util.List;
+
+
 
 import com.example.demo.entity.User;
 
-@Repository
+
+
+
+
 public interface UserMapper {
 	
+	public List<User> selectAllUsers();
+	
+	public User login(String username,String password);
+
+
 
 	
 
-	User Sel(int id);
+	
 
-	public  User login(@Param("username")String username, @Param("password")String password);
+	
+
+	
 	
  }
 
