@@ -24,5 +24,16 @@ public class UserService {
 		
 	}
 	
+	public int register(User user) {
 
+        return userMapper.register(user);
+
+    }
+	
+	public List<User> findByName(String username) {
+		User param = new User();
+		param.setUsername(username);
+		return userMapper.findOne(param);
+		
+	}
 }

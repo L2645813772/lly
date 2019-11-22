@@ -15,11 +15,32 @@
 
 	</select>
 	
-	<select id="login" resultType="User">
+	<select id="login" resultType="com.example.demo.entity.User">
 
         SELECT * FROM user where userName = #{param1} and passWord = #{param2}
 
     </select>
+    
+    <insert id="register" parameterType="com.example.demo.entity.User">
+
+        INSERT INTO user (userName, passWord) VALUES (#{userName}, #{passWord})
+
+    </insert>
+    
+    <select id="findOne" resultType="com.example.demo.entity.User">
+
+     SELECT * FROM user 
+     <where>
+      
+          <if test="id!=null">  
+              id=#{id}
+          </if>
+          <if test="username!=null">
+              and username=#{username}
+          </if>
+      </where>
+
+	</select>
 	
 	
 	</mapper>

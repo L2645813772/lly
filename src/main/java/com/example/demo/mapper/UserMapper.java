@@ -16,17 +16,15 @@ public interface UserMapper {
 	public List<User> selectAllUsers();
 	
 	public User login(String username,String password);
+	
+	int register(User user);
+
+	public List<User> findOne(User param);
 
 
 
 	
 
-	
-
-	
-
-	
-	
  }
 
 
