@@ -36,7 +36,7 @@
               id=#{id}
           </if>
           <if test="username!=null">
-              and username=#{username}
+              and userName=#{userName}
           </if>
       </where>
 

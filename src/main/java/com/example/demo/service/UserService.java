@@ -10,9 +10,9 @@ import org.springframework.stereotype.Service;
 import com.example.demo.entity.User;
 import com.example.demo.mapper.UserMapper;
 
-@Service
+@Service//service组件
 public class UserService {
-	@Autowired
+	@Autowired//自动注入
 	UserMapper userMapper;
 	public List<User> getAllUser(){
 		
