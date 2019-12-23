@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.example.demo.mapper.UserMapper">
+	<resultMap id="BaseResultMap" type="com.example.demo.entity.User">        
+	<result column="id" jdbcType="INTEGER" property="id" />        
+	<result column="userName" jdbcType="VARCHAR" property="userName" />        
+	<result column="passWord" jdbcType="VARCHAR" property="passWord" />
+	<result column="yours" jdbcType="VARCHAR" property="yours" />
+	<result column="gender" jdbcType="VARCHAR" property="gender" />
+	<result column="birth" jdbcType="VARCHAR" property="birth" />                    
+	</resultMap>
+
+
+
+  
+	
+	<select id="login" resultType="com.example.demo.entity.User">
+
+        SELECT * FROM user where userName = #{param1} and passWord = #{param2}
+
+    </select>
+    
+    <insert id="register" parameterType="com.example.demo.entity.User">
+
+        INSERT INTO user (userName, passWord) VALUES (#{userName}, #{passWord})
+
+    </insert>
+    
+    <select id="findOne" resultType="com.example.demo.entity.User">
+
+     SELECT * FROM user 
+     <where>
+      
+          <if test="id!=null">  
+              id=#{id}
+          </if>
+          <if test="username!=null">
+              and userName=#{userName}
+          </if>
+      </where>
+
+	</select>
+	
+	<select id="Sel" resultType="com.example.demo.entity.User">
+
+        select * from user where id = #{id}
+
+    </select>
+    
+    <update id="updateUser" parameterType="com.example.demo.entity.User">
+
+        update user set password=#{password} where id=#{id}
+
+    </update>
+	
+	<update id="updateUsername" parameterType="com.example.demo.entity.User">
+
+        update user set userName=#{userName} where id=#{id}
+
+    </update>
+    
+    <update id="updateGender" parameterType="com.example.demo.entity.User">
+
+        update user set gender=#{gender} where id=#{id}
+
+    </update>
+    
+     <update id="updateBirth" parameterType="com.example.demo.entity.User">
+
+        update user set birth=#{birth} where id=#{id}
+
+    </update>
+    
+     <update id="updateYours" parameterType="com.example.demo.entity.User">
+
+        update user set yours=#{yours} where id=#{id}
+
+    </update>
+    
+    <delete id="deleteUser" parameterType="com.example.demo.entity.User">
+    
+    	delete from user where id=#{id}
+    
+    </delete>
+    
+	
+	</mapper>

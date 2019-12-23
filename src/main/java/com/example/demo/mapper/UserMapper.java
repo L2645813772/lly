@@ -13,7 +13,6 @@ import com.example.demo.entity.User;
 
 public interface UserMapper {
 	
-	public List<User> selectAllUsers();
 	
 	public User login(String username,String password);
 	
@@ -21,9 +20,20 @@ public interface UserMapper {
 
 	public List<User> findOne(User param);
 
+    User Sel(int id);
 
+    Object updateUser(User user);
 
-	
+    Object updateUsername(User user);
+    
+    Object updategender(User user);
+    
+    Object updatebirth(User user);
+    
+    Object updateyours(User user);
+    
+    Object deleteUser(User user);
+    
 
  }
 

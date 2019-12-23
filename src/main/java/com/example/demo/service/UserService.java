@@ -14,11 +14,7 @@ import com.example.demo.mapper.UserMapper;
 public class UserService {
 	@Autowired//自动注入
 	UserMapper userMapper;
-	public List<User> getAllUser(){
-		
-		return userMapper.selectAllUsers();
-		
-	}
+	
 	public User login(String username,String password) {
 		return userMapper.login(username, password);
 		
@@ -36,4 +32,42 @@ public class UserService {
 		return userMapper.findOne(param);
 		
 	}
+	public List<User> findById(Integer id) {
+		User param = new User();
+		param.setId(id);
+		return userMapper.findOne(param);
+		
+	}
+	
+	public User Sel(int id){
+
+        return userMapper.Sel(id);
+
+    }
+	
+
+	public Object updateUser(User user) {
+		return userMapper.updateUser(user);
+	}
+	
+	public Object updateUsername(User user) {
+		return userMapper.updateUsername(user);
+	}
+	
+	public Object updategender(User user) {
+		return userMapper.updategender(user);
+	}
+	
+	public Object updatebirth(User user) {
+		return userMapper.updatebirth(user);
+	}
+	
+	public Object updateyours(User user) {
+		return userMapper.updateyours(user);
+	}
+	
+	public Object delectUser(User user) {
+		return userMapper.deleteUser(user);
+	}
+
 }
