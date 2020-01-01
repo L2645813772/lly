@@ -50,9 +50,9 @@ public class UserController {
 		return userService.register(user);
 	}
 	
-	
+    //	此接口请用以下地址进行访问如：/getUser/1
 	@RequestMapping(value = "/getUser/{id}",method = RequestMethod.POST)
-    public String GetUser(@PathVariable int id){
+	public String GetUser(@PathVariable int id){
         return userService.Sel(id).toString();
     }
 
